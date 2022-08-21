@@ -246,6 +246,15 @@
                 {{ product.description }}
               </div>
             {%- endif -%}
+            {%- if product.extra.info.count < 300 -%}
+              <div class='{{ section.settings.columns_mobile }}'>
+                {{ product.extra.info }}
+              </div>
+            {%- else -%}}
+              <div class='{{ section.settings.columns_desktop }}'>
+                {{ product.extra.info }}
+              </div>
+            {%- endif -%}
           {%- when 'custom_liquid' -%}
             {{ block.settings.custom_liquid }}
           {%- when 'collapsible_tab' -%}
